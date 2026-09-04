@@ -1,4 +1,4 @@
-The Linux Lines 🐧
+### The Linux Lines 🐧
 
 Hi! 😆
 
@@ -6,7 +6,7 @@ I'm Joseph, and I'm currently learning Linux and Bash scripting.
 
 I created this repository mainly to use with GitHub Codespaces, so I can have my VS Code environment and terminal wherever I am. 🦆
 
-📚 What I'm Learning
+### 📚 What I'm Learning
 
 I'm currently learning through:
 
@@ -16,7 +16,7 @@ You'll find some of my notes, experiments, and small Bash scripts here while I w
 
 «Nothing here is meant to be perfect. It's just my learning journey. 🐧»
 
-📁 What's Inside?
+### 📁 What's Inside?
 
 You'll probably find a few things like:
 
@@ -27,7 +27,7 @@ You'll probably find a few things like:
 
 ---
 
-👤 About Me
+### 👤 About Me
 
 - Name: Mahmood
 - Nickname: Joseph
