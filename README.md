@@ -5,8 +5,11 @@
 - I'm currently learning through "The linux command line" book
 ----
 echo "About Me😆" > Me.txt
+
 #Me.txt
 - I'm Mahmood you can call me (Joseph)
 - Baghdad-Iraq🇮🇶
 - My Instagram "j.f.t.y.n"
 - My discord "j.s.g.e"
+-----
+Thanks for visiting My Repo🫡
