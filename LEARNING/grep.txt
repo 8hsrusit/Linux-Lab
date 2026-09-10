@@ -1,0 +1,201 @@
+------grep usage-----
+# Its like fillter but for text(Pattren search)
+# Example you have a .txt file
+fruits.txt
+
+apple
+banana
+pineapple
+orange
+applepie
+
+# We can Use grep like this
+
+grep [Options] ["Pattren"] [file]
+
+# so we will use grep
+grep "apple" fruits.txt
+# Result
+apple
+applepie
+pineapple
+
+# you can use grep for Debug an applications
+
+app &> error.txt
+
+grep "error" error.txt
+
+# Result
+error 1
+error 2
+error 3
+
+# NOTE ==> you can use cat and pipe it with grep like this
+
+cat error.txt | grep "error"
+
+# But its pointless because grep can do t it without it
+# you can use grep with almost any command with "Pipe" ["|"]
+# for Example
+
+ls ~ | grep ".zshrc"
+# Result
+.zshrc
+.zshrc.pre-oh-my-zsh
+
+
+-----grep Options-----
+
+1 ==> -i ===> ignore Case Conditions (Upper and Lower Case)
+
+2 ==> -v ===> invert matching (it will not grep the matching Pattren)
+
+3 ==> -n ===> line numnering for the Pattren
+
+4 ==> -w ===> want a standalone Pattren # For Example
+ # Do you rmember the fruits Example at the beginning? we will take it here
+
+ grep -w "apple" fruits.txt
+
+ # Result
+ apple
+
+ # this is the Result!
+ # there is not "pineapple" and "applepie"
+ # because the "-w" Options means that it wll grep the standalone pattren only
+
+ 5 ==> -C ==> grep the lines before and after the pattren # For Example
+
+ grep -C 2 "ERROR" app.log
+
+ # Result
+Somthing
+Somthing
+ERROR
+Somthing
+Somthing
+
+6 ==> --color ==> it used to color the Result in the terminal
+
+# NOTE ==> you can use one or more Options at the same time
+# for Example
+
+grep -i -C 2 -n "ERROR" app.log
+
+# the Result will be like this :
+
+2- Loading config
+3- Connecting
+4- Error: Connection Timed Out
+5- Retrying
+
+# also you can use it like this
+grep -niC 2 "ERROR" app.log
+
+
+# if you have a multiaple files you want to grep from you can use :
+
+grep -in "ERORR" *.log
+
+
+------REGEX------
+
+# this help us grep more precisely
+
+1 ==> [DOT] "." ===> means any # For Example
+
+ls /bin > ~/ls.txt
+
+grep -in ".zip" ls.txt
+
+#this will grep any letter or number that include "zip"
+
+# Result
+bunzip2
+gunzip
+prezip
+
+2 ==> "^" and "$" ==> ^ the beginning of the line and $ means end of the line
+# Examples
+
+grep -in "^zip" ls.txt
+
+# Result
+
+zip
+zipcloak
+zipgrep
+
+&&&
+
+grep -in "$zip" ls.txt
+
+# Result
+gunzip
+prezip
+funzip
+
+# NOTE ==> we can use both ^ and $ to grt a standalone pattren
+# Example
+
+grep -in "^zip$" ls.txt
+
+# Result
+
+ zip
+
+
+
+-----POSIX------
+
+# lets take an Examples
+
+A ==> animal.txt
+
+dog
+cat
+dogs
+cats
+
+B ==> go.txt
+
+gd
+god
+good
+goood
+goooood
+
+
+1 ==> [PLUS] "+" ==> The preceding element repeats one or more times
+
+# Example
+
+grep -E "go+d" "go.txt"
+
+# Result
+god
+good
+goood
+goooood
+
+2 ==> [Pipe] "|" ==> it means OR # for Example
+
+ grep -E "cat|dog" animal.txt
+
+# Result
+
+dog
+cat
+dogs
+cats
+
+
+
+
+------THE END------
+
+# i know i didn't explain grep fully
+# if you want more details view the man page for grep
+# and for REGEX and POSIX google it oe ask AI for more details.
+
