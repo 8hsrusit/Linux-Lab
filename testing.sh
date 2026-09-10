@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # ================
-echo "hi"
+echo "hi everyone :)"
 # ================
