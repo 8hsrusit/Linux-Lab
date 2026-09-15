@@ -1,0 +1,53 @@
+-----variables & constent in sh------
+
+A - variables ==> somthing you need it a few times # for example
+
+C1=$(timedatectl)
+
+# instead of re-type this command for HUNDRED TIMES use a simple string to represent this command
+# it works with everything :)
+
+B - constent ==> somthing you need it but you dont want it to change it
+
+readonly P1="/home/user/Downloads"
+
+# the readonly will lock the string from changing in the Script
+
+----here Script-----
+
+# it used if you have a lot of text you want to print
+
+# For example
+
+cat << EOF # you can use any name instead of EOF
+YAP
+somthing
+YAPP
+Hello
+LINUX
+DEBIAN
+ARCH
+YAP
+EOF
+
+
+# you can use
+cat << 'EOF'
+# for Litral (even the variables)
+
+# you can use
+cat <<- EOF
+# this will ignore any TABs # NOT SPACEs
+# For example
+cat <<- EOF # you can use any name instead of EOF
+    YAP
+    somthing
+    YAPP
+    Hello
+    LINUX
+    DEBIAN
+    ARCH
+    YAP
+EOF
+ # this is TABs not SPACEs
+ # the result will be without the TABs

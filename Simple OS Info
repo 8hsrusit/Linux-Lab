@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# ==================
+# variables
+# ==================
+readonly PAT1="/etc/os-release"
+# HOSTNAME,$USER and $HOME is an env variables      <=========
+CURRENT_DATE=$(date)
+
+# ==================
+# SOME YAP
+# ==================
+cat <<-WHY?
+	Wellcome $USER!
+		Today's date is $CURRENT_DATE
+		The Date provided by $USER
+		Your Home is $HOME
+	This is your Liunx Distro Simple Info For $HOSTNAME!
+WHY?
+
+# ================
+# Opertions
+# ================
+cat $PAT1
