@@ -9,7 +9,7 @@ CURRENT_DATE=$(date)
 # ==================
 # SOME YAP
 # ==================
-cat <<-WHY?
+cat <<- WHY?
 	Wellcome $USER!
 		Today's date is $CURRENT_DATE
 		The Date provided by $USER

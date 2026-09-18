@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+path()
+{
+     local file=$1
+
+     if [ -e "$file" ]
+      then
+        echo "This file exist!"
+
+      else
+         echo "This file does not exist:("
+     fi
+
+     local dir=$1
+
+     if [ -d "$dir" ]
+      then
+        echo "This is a dir!"
+
+       else
+        echo "this dir does not exist:("
+
+    fi
+
+
+}
+
+path "$@"
+
+
+
+# "&&" ==> if the first command succeed run the second command
+# "||" ==> if the first command failed run second command
+
+# <-------testing files------->
+# -e ==> if the files exist
+# -d ==> if uts a dir
+# -f ==> if its a regular file
+# -g ==> if the files exist but it has a "set group id"
+# -G ==> if the files exist
+# -L ==> if the files exist but its a link
+# -O ==> if the files exist and its owned to the current user
+# -r ==> if the files exist and it have a read permission
+# -u ==> if the files exist an it have "set uid"
+# -w ==> if the files exist and it has a write permission
+# -x ==> if the files exist and it hava an exce permission

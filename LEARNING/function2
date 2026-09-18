@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+min="1"
+max="100"
+int="-1"
+
+if
+     [[ $int =~ ^-?[0-9]+$  ]]
+    then
+if [[ "$int" -ge "$min" && "$int" -le "$max" ]]
+    then
+       echo "This is a number within the max and the min value:)"
+
+     else
+     echo " sorry:(, this int is out of range"
+
+fi
+
+
+else
+  echo "this noy an int!"
+
+fi
