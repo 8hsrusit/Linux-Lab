@@ -18,6 +18,6 @@ fi
 
 
 else
-  echo "this noy an int!"
+  echo "this not an int!"
 
 fi
