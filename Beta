@@ -1,0 +1,167 @@
+#!/usr/bin/env bash
+
+# =============
+# ASCII Art
+# =============
+toilet -f 'Delta Corps Priest 1.flf' --gay -w 200 Wellcome
+
+# ==================
+# color variables
+# ==================
+ RED=$'\e[31m'
+ GREEN=$'\e[32m'
+ BLUE=$'\e[34m'
+ MAGENTA=$'\e[35m'
+ CYAN=$'\e[36m'
+ YELLOW=$'\e[33m'
+ RESET=$'\e[0m'
+
+
+# ==============
+# SOME YAP
+# ==============
+
+cat <<- YAP!
+        ${MAGENTA}Greetings,$USER!${RESET}
+            ${BLUE}Today's date is $(date)${RESET}
+            ${GREEN}Your Home is $HOME${RESET}
+            ${RED}Your Device's Name is $HOSTNAME${RESET}
+
+YAP!
+
+# ==================
+# INPUT FROM USER
+# ==================
+
+echo -e "${CYAN}Choose Your option!${RESET}"
+echo -e "the available options Are:"
+
+cat <<- FE!
+
+    CPU
+    MEMORY
+    DISK
+    STORAGE
+    PCI
+    USB
+    NETWORK
+    DESKTOP SESSION
+    SESSION TYPE
+    OS
+
+FE!
+
+echo -e "${YELLOW}Choose Your Options please (UpperCase Only):${RESET}"
+read -r input
+
+# =============
+# Functions
+# =============
+
+CPU()
+{
+    lscpu | less
+}
+
+MEMORY()
+{
+    free -h
+}
+
+
+DISK()
+{
+    lsblk -f | less
+}
+
+
+PCI()
+{
+    lspci | less
+}
+
+USB()
+{
+    lsusb | less
+}
+
+NETWORK()
+{
+    ip addr | less
+}
+
+DESKTOP_SESSION()
+{
+    echo "$XDG_CURRENT_DESKTOP"
+}
+
+SESSION_TYPE()
+{
+    echo "$XDG_SESSION_TYPE"
+}
+
+
+OS()
+{
+    cat /etc/os-release
+}
+
+
+# ==============
+# IFs
+# ==============
+
+if [ "$input" == CPU ]
+        then
+            CPU
+fi
+
+
+    if [ "$input" == MEMORY ]
+        then
+            MEMORY
+
+fi
+
+    if [ "$input" == DISK ]
+        then
+            DISK
+
+fi
+
+    if [ "$input" == PCI ]
+        then
+            PCI
+
+fi
+
+if [ "$input" == USB ]
+        then
+            USB
+fi
+
+if [ "$input" == NETWORK ]
+        then
+            NETWORK
+fi
+
+if [ "$input" == "DESKTOP SESSION" ]
+        then
+            DESKTOP_SESSION
+fi
+
+if [ "$input" == "SESSION TYPE" ]
+        then
+            SESSION_TYPE
+fi
+
+if [ "$input" == OS ]
+        then
+            OS
+
+fi
+
+echo -e "${GREEN}Done:)${RESET}"
+
+
+exit
