@@ -30,7 +30,7 @@ cat <<- YAP!
 YAP!
 
 # ==================
-# INPUT FROM USER
+# INPUT FROM USER 
 # ==================
 
 echo -e "${CYAN}Choose Your option!${RESET}"
